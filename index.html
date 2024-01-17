@@ -1,11 +1,67 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="./src/styles/reset.css">
+    <link rel="stylesheet" href="./src/styles/buttons.css">
+    <link rel="stylesheet" href="./src/styles/containers.css">
+    <link rel="stylesheet" href="./src/styles/main.css">
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <title>Card Game</title>
 </head>
+
 <body>
-    
+    <div class="bg-video">
+        <video class="video" autoplay loop muted>
+            <source src="./src/assets/video/yugi.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="container">
+        <div class="container-left framed-golden-2">
+            <div class="score-box frame">
+                <span id="score-points">Win : 0 | Lose: 0</span>
+            </div>
+            <div class="menu-avatar">
+                <img id="card-img">
+            </div>
+            <div class="card-details frame">
+                <p id="card-name">g</p>
+                <p id="card-type">l</p>
+            </div>
+        </div>
+        <div class="container-right">
+            <div class="card-box-container">
+                <div id="cpu-cards" class="card-box framed">
+                </div>
+                <div class="card-versus">
+                    <div class="versus-top">
+                        <div class="card-infield">
+                            <img height="180px" width="125px" id="player-field-card">
+                        </div>
+
+                        <img height="100px" src="./src/assets/icons/millenium2.png">
+
+                        <div class="card-infield">
+                            <img height="180px" width="125px" id="cpu-field-card">
+                        </div>
+                    </div>
+                    <div class="versus-bottom">
+                        <button id="next-duel" class="rpgui-button" onclick="resetDuel()">GANHOU</button>
+                    </div>
+                </div>
+                <div id="player-cards" class="card-box framed">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./src/scripts/engine.js" defer></script>
 </body>
+
 </html>
