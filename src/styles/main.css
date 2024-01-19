@@ -5,7 +5,7 @@
     height: 100vh;
     overflow: hidden;
     display: flex;
-    justify-content: center;
+    justify-content: right;
 }
 
 .bg-video .video{
@@ -21,7 +21,7 @@
     width: 100vw;
     background: linear-gradient(90deg, rgba(0,0,0,1)0%,
                 rgba(0,0,0,0.8)50%,
-                rgba(0,0,0,1)100%
+                rgba(0,0,0,1)140%
     );
 }
 
@@ -89,7 +89,7 @@
 .card-box{
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
     height: 9rem;
     width: 100%;
 }
@@ -128,4 +128,8 @@
 
 .card:hover{
     transform: scale(1.2);
+}
+
+#player-field{
+    visibility: visible;
 }
