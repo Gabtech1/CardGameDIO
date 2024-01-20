@@ -32,16 +32,16 @@ const cardData = [
         name: 'Kabutops',
         type: 'Rock',
         img: `${pathImgs}kabutops.png`,
-        winOf: [3],
-        loseOf: [2,4]
+        winOf: [3,12],
+        loseOf: [1,2,4,8,10]
     },
     {
         id: 1,
         name: 'Venusaur',
         type: 'Grass',
         img: `${pathImgs}venusaur.png`,
-        winOf: [0,2],
-        loseOf: [3,4]
+        winOf: [0,2,6],
+        loseOf: [3,4,5]
     },
     {
         id: 2,
@@ -49,23 +49,87 @@ const cardData = [
         type: 'Water',
         img: `${pathImgs}totodile.png`,
         winOf: [0,3],
-        loseOf: [1,4]
+        loseOf: [1,4,8,12]
     },
     {
         id: 3,
         name: 'Charizard',
         type: 'Fire',
         img: `${pathImgs}charizard.png`,
-        winOf: [1],
-        loseOf: [0,2,4]
+        winOf: [1,8],
+        loseOf: [0,2,4,6,10]
     },
     {
         id: 4,
         name: 'Mewtwo',
         type: 'Psychic',
         img: `${pathImgs}mewtwo.png`,
-        winOf: [0,1,2,3],
+        winOf: [0,1,2,3,4,5,6,7,8,9,10,11,12],
         loseOf: [null]
+    },
+    {
+        id: 5,
+        name: 'Weezing',
+        type: 'Poison',
+        img: `${pathImgs}weezing.png`,
+        winOf: [1,8],
+        loseOf: [4,6]
+    },
+    {
+        id: 6,
+        name: 'Nidoqueen',
+        type: 'Ground',
+        img: `${pathImgs}nidoqueen.png`,
+        winOf: [3,12],
+        loseOf: [1,2,4,8,10]
+    },
+    {
+        id: 7,
+        name: 'Machamp',
+        type: 'Fight',
+        img: `${pathImgs}machamp.png`,
+        winOf: [0],
+        loseOf: [4,11]
+    },
+    {
+        id: 8,
+        name: 'Victreebel',
+        type: 'Grass',
+        img: `${pathImgs}victreebel.png`,
+        winOf: [0,2,6,10],
+        loseOf: [3,4,5]
+    },
+    {
+        id: 9,
+        name: 'Dragonite',
+        type: 'Dragon',
+        img: `${pathImgs}dragonite.png`,
+        winOf: [0,1,2,3],
+        loseOf: [4,9]
+    },
+    {
+        id: 10,
+        name: 'Gyarados',
+        type: 'Water',
+        img: `${pathImgs}gyarados.png`,
+        winOf: [0,1,2,3],
+        loseOf: [1,4,8,12]
+    },
+    {
+        id: 11,
+        name: 'Gengar',
+        type: 'Ghost',
+        img: `${pathImgs}gengar.png`,
+        winOf: [11],
+        loseOf: [4,11]
+    },
+    {
+        id: 12,
+        name: 'Electabuzz',
+        type: 'Eletric',
+        img: `${pathImgs}electabuzz.png`,
+        winOf: [2,10],
+        loseOf: [0,1,4,6]
     }
 ];
 
@@ -100,6 +164,10 @@ async function setCardsField(cardId){
 
     state.fieldCards.player.style.display = "block";
     state.fieldCards.cpu.style.display = "block";
+
+    state.cardSprites.avatar.src = '';
+    state.cardSprites.name.innerText = '';
+    state.cardSprites.type.innerText = '';
 
     state.fieldCards.player.src = cardData[cardId].img;
     state.fieldCards.cpu.src = cardData[cpuCardId].img;
@@ -177,8 +245,15 @@ async function playAudio(status){
 }
 
 function init(){
+    state.fieldCards.player.style.display = 'none';
+    state.fieldCards.cpu.style.display = 'none';
+
     drawCards(5, state.playerSides.player1);
     drawCards(5, state.playerSides.cpu);
+
+    const bgm = document.getElementById('bgm');
+    bgm.volume = 0.06;
+    bgm.play();
 }
 
 init();

@@ -12,10 +12,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="./src/assets/icons/pokeball.png" type="image/x-icon">
     <title>Card Game</title>
 </head>
 
 <body>
+    <audio id="bgm" loop>
+        <source src="./src/assets/audios/theme.mp3" type="audio/mp3">
+    </audio>
+
     <div class="bg-video">
         <video class="video" autoplay loop muted>
             <source src="./src/assets/video/intro.mp4" type="video/mp4">
@@ -43,13 +48,13 @@
                 <div class="card-versus">
                     <div class="versus-top">
                         <div class="card-infield">
-                            <img height="180px" width="125px" id="player-field">
+                            <img height="170px" width="120px" id="player-field">
                         </div>
 
                         <img height="100px" src="./src/assets/icons/pokeball.png">
 
                         <div class="card-infield">
-                            <img height="180px" width="125px" id="cpu-field">
+                            <img height="170px" width="120px" id="cpu-field">
                         </div>
                     </div>
                     

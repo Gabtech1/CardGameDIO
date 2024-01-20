@@ -119,7 +119,15 @@
 
 .card-infield{
     height: 11.2rem;
-    width: 8rem;
+    width: 9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.5);
+    border-style: solid;
+    border-image-source: url("../assets/icons/bd.png");
+    border-image-slice: 80 8 30 8;
+    border-image-width: 3px;
 }
 
 .card{
